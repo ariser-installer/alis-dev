@@ -23,16 +23,18 @@ echo "################################################################"
 echo "Making all .sh files executable"
 echo "################################################################"
 echo
-chmod +x *.sh
+chmod +x /alis-dev/*.sh
 chmod +x /alis-dev/configs/*.sh
 chmod +x /alis-dev/configz/*.sh
 echo "################################################################"
 echo "Shall we start the alis script"
+echo
+echo "Answer with y/Y or n/N"
 echo "################################################################"
 echo
 read response
 if [[ "$response" == [yY] ]]; then
-    /alis/alis.sh -w
+    /alis/alis-dev.sh -w
 else
     echo "################################################################"
     echo "We did not start the alis script"
