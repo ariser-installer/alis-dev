@@ -34,7 +34,7 @@ echo "################################################################"
 echo
 read response
 if [[ "$response" == [yY] ]]; then
-    /alis/alis-dev.sh -w
+    /alis/alis.sh -w
 else
     echo "################################################################"
     echo "We did not start the alis script"
