@@ -25,7 +25,6 @@ PACKAGES_CONF_FILE="alis-packages.conf"
 PACKAGES_LOG_FILE="alis-packages.log"
 COMMONS_CONF_FILE="alis-commons.conf"
 PROVISION_DIRECTORY="files/"
-VIRTUALBOX="false"
 
 RED='\033[0;91m'
 GREEN='\033[0;92m'
@@ -157,13 +156,13 @@ function facts_commons() {
         VMWARE="true"
     fi
 
-    if [ "$VIRTUALBOX" != "true" ] && [ "$VMWARE" != "true" ]; then
-        if [ "$CPU_VENDOR" == "intel" ]; then
-            INITRD_MICROCODE="intel-ucode.img"
-        else
-            INITRD_MICROCODE="amd-ucode.img"
-        fi
-    fi
+    # if [ "$VIRTUALBOX" != "true" ] && [ "$VMWARE" != "true" ]; then
+    #     if [ "$CPU_VENDOR" == "intel" ]; then
+    #         INITRD_MICROCODE="intel-ucode.img"
+    #     else
+    #         INITRD_MICROCODE="amd-ucode.img"
+    #     fi
+    # fi
 
     USER_NAME_INSTALL="$(whoami)"
     if [ "$USER_NAME_INSTALL" == "root" ]; then
