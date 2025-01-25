@@ -23,9 +23,9 @@ echo "################################################################"
 echo "Making all .sh files executable"
 echo "################################################################"
 echo
-chmod +x /alis-dev/*.sh
-chmod +x /alis-dev/configs/*.sh
-chmod +x /alis-dev/configz/*.sh
+chmod +x /alis/*.sh
+chmod +x /alis/configs/*.sh
+chmod +x /alis/configz/*.sh
 echo
 echo "################################################################"
 echo "Shall we start the alis script"
@@ -35,7 +35,7 @@ echo "################################################################"
 echo
 read response
 if [[ "$response" == [yY] ]]; then
-    /alis-dev/alis.sh -w
+    /alis/alis.sh -w
 else
     echo "################################################################"
     echo "We did not start the alis script"
