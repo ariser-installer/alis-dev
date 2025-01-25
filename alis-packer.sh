@@ -34,5 +34,5 @@ packer build -force -on-error=ask \
   -var "branch=$BRANCH" \
   -var "branch_qualifier=$BRANCH_QUALIFIER" \
   -var "config_file_sh=$CONFIG_FILE_SH" \
-  -var "configs/$CONFIG_FILE"
+  "configs/$CONFIG_FILE"
 
