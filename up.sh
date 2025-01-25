@@ -40,6 +40,9 @@ sed -i "s/\(^ISO_BUILD=\).*/\1$date_build/" files/etc/dev-rel
 # Folder to check
 FOLDER="output-archlinux-alis-virtualbox"
 
+# Set default alis.conf back
+cp alis.bconf alis.conf
+
 # Check if the folder exists
 if [ -d "$FOLDER" ]; then
   echo "Folder '$FOLDER' exists. Removing..."
