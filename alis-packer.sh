@@ -8,7 +8,7 @@ set -eu
 CONFIG_FILE="alis-packer.json"
 BRANCH="main"
 BRANCH_QUALIFIER=""
-CONFIG_FILE_SH="ariser-alis-config-efi-ext4-systemd.sh"
+CONFIG_FILE_SH="ariser-alis-config-efi-ext4-grub-xfce.sh"
 
 while getopts "b:c:" arg; do
   case $arg in
