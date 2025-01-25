@@ -41,12 +41,14 @@ sed -i "s/\(^ISO_BUILD=\).*/\1$date_build/" files/etc/dev-rel
 FOLDER="output-archlinux-alis-virtualbox"
 
 # Prompt the user
+echo
+echo
 read -p "Do you want to set the default alis.conf back? (y/n): " response
 
 # Check the response
 if [[ "$response" == "y" || "$response" == "Y" ]]; then
   # Set default alis.conf back
-  cp alis.bconf alis.conf
+  cp -v alis.bconf alis.conf
   echo "Default alis.conf has been restored."
 else
   # Do nothing
