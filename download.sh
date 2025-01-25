@@ -10,7 +10,7 @@ set -eu
 GITHUB_USER="ariser-installer"
 BRANCH="main"
 HASH=""
-ARTIFACT="alis-${BRANCH}"
+ARTIFACT="alis-dev-${BRANCH}"
 
 while getopts "b:h:u:" arg; do
   case ${arg} in
