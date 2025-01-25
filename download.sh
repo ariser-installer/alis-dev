@@ -10,7 +10,7 @@ set -eu
 GITHUB_USER="ariser-installer"
 BRANCH="main"
 HASH=""
-ARTIFACT="alis-dev-${BRANCH}"
+ARTIFACT="alis-${BRANCH}"
 
 while getopts "b:h:u:" arg; do
   case ${arg} in
@@ -34,13 +34,12 @@ done
 
 set -o xtrace
 if [ -n "$HASH" ]; then
-  echo "With Hash"
   curl -sL -o "${ARTIFACT}.zip" "https://github.com/${GITHUB_USER}/alis-dev/archive/${HASH}.zip"
   bsdtar -x -f "${ARTIFACT}.zip"
   cp -R "${ARTIFACT}"/*.sh "${ARTIFACT}"/*.conf "${ARTIFACT}"/files/ "${ARTIFACT}"/configs/ ./
 else
-  curl -sL -o "${ARTIFACT}.tar.gz" "https://github.com/${GITHUB_USER}/alis-dev/archive/refs/heads/${BRANCH}.tar.gz"
-  tar -xf "${ARTIFACT}.tar.gz"
+  curl -sL -o "${ARTIFACT}.zip" "https://github.com/${GITHUB_USER}/alis-dev/archive/refs/heads/${BRANCH}.zip"
+  bsdtar -x -f "${ARTIFACT}.zip"
   cp -R "${ARTIFACT}"/*.sh "${ARTIFACT}"/*.conf "${ARTIFACT}"/files/ "${ARTIFACT}"/configs/ ./
 fi
 chmod +x configs/*.sh
